@@ -43,6 +43,12 @@ Each record contains:
    - Initial training experiments
    - Development notebook
 
+5. **DistilBERT_train.ipynb**
+   - Fine-tunes `distilbert-base-uncased` for binary sentiment classification
+   - Uses Hugging Face Transformers and PyTorch via the `Trainer` API
+   - Tokenization handled with `DistilBertTokenizerFast`
+   - Produces training logs and evaluation metrics
+
 ### Models
 
 - **lstm_sentiment_model_train-accu-86_val-acc-81.h5**: Pre-trained LSTM model with best performance metrics
@@ -52,6 +58,7 @@ Each record contains:
 - **Data Processing**: Pandas, NumPy
 - **NLP**: NLTK (Natural Language Toolkit)
 - **Deep Learning**: TensorFlow, Keras
+- **Transformers**: Hugging Face `transformers`, PyTorch
 - **Machine Learning**: Scikit-learn
 - **Progress Tracking**: tqdm
 
@@ -83,6 +90,17 @@ Run `lstm_train.ipynb` to train the LSTM model:
 jupyter notebook lstm_train.ipynb
 ```
 
+### 3. DistilBERT Training
+Run `DistilBERT_train.ipynb` to fine-tune DistilBERT for sentiment classification (GPU recommended):
+```
+jupyter notebook "DistilBERT_train.ipynb"
+```
+
+Notes:
+- Ensure `transformers` and `torch` are installed (see Requirements).
+- If using mixed precision, set `fp16=True` in `TrainingArguments` when running on compatible GPUs.
+- Adjust batch sizes and `max_length` in the notebook to fit GPU memory.
+
 ### 3. Baseline Comparison
 Run `train_lr.ipynb` to train and evaluate logistic regression:
 ```
@@ -103,6 +121,7 @@ jupyter notebook train_lr.ipynb
 Install required packages:
 ```bash
 pip install pandas numpy nltk tensorflow keras scikit-learn tqdm
+pip install transformers torch
 ```
 
 Download NLTK data:

@@ -136,3 +136,15 @@ nltk.download('stopwords')
 - Preprocessing significantly improves model performance
 - The LSTM model outperforms traditional ML baselines
 - Consider ensemble methods or transfer learning for further improvements
+
+**BERT Training Result**
+- **Result:** Achieved 87% validation accuracy (May 17, 2026).
+- **Notebook:** See the training run in [BERT_train.ipynb](BERT_train.ipynb).
+- **Model:** Saved to [final_model](final_model) (includes `model.safetensors`, tokenizer files).
+- **Training settings:** Epochs: `10`; Train batch size: `128`; Eval batch size: `32`; Learning rate: `2e-5`; Output dir: `./bert_results_2`.
+- **Reproduce:** Open [BERT_train.ipynb](BERT_train.ipynb) and run all cells (GPU recommended). Adjust batch sizes if memory is limited.
+
+
+My device info: 
+CPU: Ryzen 5 7500F,
+GPU: NVIDIA Geforce RTX 5060 Ti 16 GB 
